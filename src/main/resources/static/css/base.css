@@ -1,0 +1,78 @@
+/*公用样式表*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 清除浮动与浮动配置 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* 去掉li的默认样式 */
+li {
+    list-style: none;
+}
+
+/* 去掉img底部的缝隙 */
+img {
+    vertical-align: bottom;
+}
+
+/* 去掉超链接的底部下划线 */
+a {
+    text-decoration: none;
+    /* 继承父类的相关样式 */
+    color: inherit;
+}
+
+/* 设置整体页面的字体相关样式 */
+body {
+    font-size: 14px;
+    font-family: "PingFang SC", "zk", "HarmonyOS_Sans";
+    line-height: 1.5;
+    min-width: 1280px;
+
+    /* 从css禁用用户选择文字 */
+    /* start */
+    -moz-user-select: none;
+    /* Firefox私有属性 */
+    -webkit-user-select: none;
+    /* WebKit内核私有属性 */
+    -ms-user-select: none;
+    /* IE私有属性(IE10及以后) */
+    -khtml-user-select: none;
+    /* KHTML内核私有属性 */
+    -o-user-select: none;
+    /* Opera私有属性 */
+    user-select: none;
+    /* CSS3属性 */
+    /* end */
+}
+
+@font-face {
+    font-family: "zk";
+    src: url('../font-family/zk.ttf');
+}
+
+@font-face {
+    font-family: "timefont";
+    src: url('../font-family/DS-DIGI.TTF');
+}
+
+/* html5平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+

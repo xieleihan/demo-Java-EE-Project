@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生选课管理系统</title>
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/LoginPages.css">
+</head>
+<body>
+    <div class="main">
+        <div class="title">学生登录页面</div>
+
+        <!-- 返回按钮 -->
+        <div class="returnBtn" id="returnBtn">
+            &lt;
+        </div>
+
+        <!-- 下面注释是我自己写的另外写的的input样式,现已弃用 -->
+        <!-- <div class="group">
+            <input required="" type="text" class="input">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>UserName</label>
+        </div>
+        <div class="group">
+            <input required="" type="text" class="input">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Password</label>
+        </div> -->
+
+        <!-- 登录盒子 -->
+        <div class="login-box">
+            <p>Login</p>
+            <form action="/login" method="post">
+                <div class="user-box">
+                    <input required="" name="" type="text">
+                    <label>UserName</label>
+                </div>
+                <div class="user-box">
+                    <input required="" name="" type="password">
+                    <label>Password</label>
+                </div>
+                <a href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    前往新世界
+                </a>
+            </form>
+            <p>你该不会还没我账户吧-> <a href="./SigninPages.html" class="a2">快来加入</a></p>
+        </div>
+
+        <div class="footer">
+            <a href="./index.html">点击我回到主页</a>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright © 2024 SouthAki All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+<script src="./js/LoginPages.js"></script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="./css/Loading.css">
+    <link rel="stylesheet" href="./css/base.css">
+</head>
+
+<body>
+    <div id="wifi-loader">
+        <svg class="circle-outer" viewBox="0 0 86 86">
+            <circle class="back" cx="43" cy="43" r="40"></circle>
+            <circle class="front" cx="43" cy="43" r="40"></circle>
+            <circle class="new" cx="43" cy="43" r="40"></circle>
+        </svg>
+        <svg class="circle-middle" viewBox="0 0 60 60">
+            <circle class="back" cx="30" cy="30" r="27"></circle>
+            <circle class="front" cx="30" cy="30" r="27"></circle>
+        </svg>
+        <svg class="circle-inner" viewBox="0 0 34 34">
+            <circle class="back" cx="17" cy="17" r="14"></circle>
+            <circle class="front" cx="17" cy="17" r="14"></circle>
+        </svg>
+        <div class="text" data-text="Loading"></div>
+    </div>
+</body>
+
+<script>
+    window.onload = function () {
+        // 当页面加载完成后执行的函数
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = './LoginPages.html';
+
+        iframe.onload = function () {
+            // 当加载完成后执行的函数
+            setTimeout(function () {
+                window.location.href = './LoginPages.html'; // 重定向到页面
+            }, 2000); // 等待2秒后执行重定向
+        };
+
+        document.body.appendChild(iframe);
+        return false;
+    }
+</script>
+
+</html>
