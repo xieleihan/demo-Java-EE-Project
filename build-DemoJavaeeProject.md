@@ -213,12 +213,27 @@ public class UserService {
 create database demospringboot;
 use demospringboot;
 drop table if exists `user`;
+
+-- 用户表 
 CREATE TABLE user (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    password VARCHAR(100) NOT NULL
+                      id INT AUTO_INCREMENT PRIMARY KEY,
+                      username VARCHAR(50) NOT NULL,
+                      email VARCHAR(100) NOT NULL,
+                      password VARCHAR(100) NOT NULL
 );
 select * from user;
+
+-- 学生信息表
+drop table if exists `stuInfo`;
+create table stuInfo(
+                        id int auto_increment primary key,
+                        username varchar(50) not null,
+                        stuname varchar(50) not null,
+                        stuid varchar(100) not null,
+                        grade varchar(10) not null,
+                        class varchar(50) not null
+);
+insert into `stuinfo` values(1,'xieleihan','xieleihan','1001','大二','1班');
+select * from stuinfo;
 ```
 关键部分就是上面那些,后续肯定有修改
