@@ -34,22 +34,23 @@
         <!-- 登录盒子 -->
         <div class="login-box">
             <p>Login</p>
-            <form action="/login" method="post">
+            <form action="/login" method="post" id="loginForm">
                 <div class="user-box">
-                    <input required="" name="" type="text">
+                    <input required="" name="username" type="text">
                     <label>UserName</label>
                 </div>
                 <div class="user-box">
-                    <input required="" name="" type="password">
+                    <input required="" name="password" type="password">
                     <label>Password</label>
                 </div>
-                <a href="#">
+                <button class="btn" type="submit">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     前往新世界
-                </a>
+                </button>
+
             </form>
             <p>你该不会还没我账户吧-> <a href="./SigninPages.html" class="a2">快来加入</a></p>
         </div>
@@ -64,4 +65,28 @@
     </div>
 </body>
 <script src="./js/LoginPages.js"></script>
+<script src="./js/jquery-3.7.1.min.js"></script>
+<script>
+    // 当表单提交时执行登录请求(Ajax)
+    $('#loginForm').submit(function(event) {
+        event.preventDefault(); // 阻止表单的默认提交行为
+        var formData = $(this).serialize(); // 获取表单数据
+
+        $.ajax({
+            type: 'POST',
+            url: '/login', // 后端登录接口的URL
+            data: formData,
+            success: function(response) {
+                // 登录成功则重定向回index.html,这一步可以在前端完成
+                window.location.href = '/index.html';
+                // 更换顶部头像的图片地址
+                $('#topAvatar').attr('src', './images/new_avatar.png');
+            },
+            error: function(xhr, status, error) {
+                // 登录失败则显示错误提示
+                alert(xhr.responseText); // xhr.responseText 是后端返回的错误消息
+            }
+        });
+    });
+</script>
 </html>
