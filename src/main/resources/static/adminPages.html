@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员登录页面</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/adminPagesStyle.css">
+</head>
+<body>
+<div class="main">
+    <div class="loginPages">
+        <h2>管理员登录页面</h2>
+        <form action="/adminlogin" method="post" id="adminLoginForm">
+            <input type="text" name="adminname" placeholder="请输入adminname" class="adminUserInput" />
+            <br />
+            <input type="password" name="password" placeholder="请输入password" class="pswInput" />
+            <br />
+            <button type="submit" class="btnSubmit">登录</button>
+        </form>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // 当表单提交时执行登录请求(Ajax)
+    $('#adminLoginForm').submit(function(event) {
+        event.preventDefault(); // 阻止表单的默认提交行为
+        var formData = $(this).serialize(); // 获取表单数据
+
+        $.ajax({
+            type: 'POST',
+            url: '/adminlogin', // 后端登录接口的URL
+            data: formData,
+            success: function(response) {
+                // 登录成功则重定向回管理页面
+                window.location.href = '/managementPage.html';
+            },
+            error: function(xhr, status, error) {
+                // 登录失败则显示错误提示
+                alert(xhr.responseText); // xhr.responseText 是后端返回的错误消息
+            }
+        });
+    });
+</script>
+</html>
