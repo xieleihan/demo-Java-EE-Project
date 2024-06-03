@@ -12,11 +12,12 @@ public class AdminService {
     private AdminRepository adminRepository;
 
     public AdminInfo validateAdmin(String adminname, String password) {
-        AdminInfo admin = adminRepository.findByAdminname(adminname);
-        if (admin != null && admin.getPassword().equals(password)) {
-            return admin;
+        AdminInfo adminInfo = adminRepository.findById(adminname).orElse(null);
+        if (adminInfo != null && adminInfo.getPassword().equals(password)) {
+            return adminInfo;
         }
         return null;
     }
 }
+
 

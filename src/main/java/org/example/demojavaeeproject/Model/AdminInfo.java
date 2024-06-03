@@ -12,6 +12,15 @@ public class AdminInfo {
     private String adminname;
     private String password;
 
+    // Constructors
+    public AdminInfo() {
+    }
+
+    public AdminInfo(String adminname, String password) {
+        this.adminname = adminname;
+        this.password = password;
+    }
+
     // Getters and setters
     public String getAdminname() {
         return adminname;
@@ -29,4 +38,5 @@ public class AdminInfo {
         this.password = password;
     }
 }
+
 

@@ -4,6 +4,12 @@
 >
 > **在项目构建初期,我打算尽量将学过的东西用上**,但是我承认个人能力有限,我尽量每一步做到最好,无论未来如何,我选择希望.
 
+## 2024-06-03 Updata some content
+
+需要实现的是,将后端查询到的`stuinfo`的信息,我已经将后端查询到的数据,通过方式传出到前端,是JSON文件
+
+🚧流程：1.将后端的JSON展示到前端(一共需要三个页面,学生的,老师的,管理员的) 2.美化一下前端的页面 3.后端的相应的改进一下
+
 ## 2024-05-11 new 一个仓库😊🎉
 
 *已经实现的是注册页面*,但是**安全性可能还没完善**
@@ -207,7 +213,7 @@ public class UserService {
 
 > SQL语句
 > 
-> **部分**
+> **部分**(2024-06-03更新,需要引入新的数据库建表)
 
 ```sql
 create database demospringboot;
@@ -216,25 +222,42 @@ drop table if exists `user`;
 
 -- 用户表 
 CREATE TABLE user (
-                      id INT AUTO_INCREMENT PRIMARY KEY,
-                      username VARCHAR(50) NOT NULL,
-                      email VARCHAR(100) NOT NULL,
-                      password VARCHAR(100) NOT NULL
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL
 );
 select * from user;
 
 -- 学生信息表
 drop table if exists `stuInfo`;
 create table stuInfo(
-                        id int auto_increment primary key,
-                        username varchar(50) not null,
-                        stuname varchar(50) not null,
-                        stuid varchar(100) not null,
-                        grade varchar(10) not null,
-                        class varchar(50) not null
+	id int auto_increment primary key,
+    username varchar(50) not null,
+    stuname varchar(50) not null,
+    stuid varchar(100) not null,
+    grade varchar(10) not null,
+    class varchar(50) not null
 );
 insert into `stuinfo` values(1,'xieleihan','xieleihan','1001','大二','1班');
 select * from stuinfo;
+
+-- 老师表
+drop table if exists `teacherInfo`;
+create table teacherInfo(
+	id int auto_increment primary key,
+    username varchar(50) not null,
+    teachername varchar(50) not null,
+    teacherid varchar(50) not null,
+    grade varchar(50) not null
+);
+
+CREATE TABLE admin (
+    adminname VARCHAR(255) PRIMARY KEY,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO admin (adminname, password) VALUES ('admin', 'password123');
 ```
 关键部分就是上面那些,后续肯定有修改
 

@@ -8,6 +8,24 @@
 <body>
     <!-- 这里是当我在adminPages.html登录成功后跳转的页面 -->
     <!-- 要做的事情就是,这个权限所有者,可以看到各种信息,进行相应的操作  引入level进行判断鉴权,防止非必要的访问,但是在前端处理这个是极度危险的,所以,只能前端传到后端,后端需要对cookie进行判断等,才能做出修改的指令执行 -->
-    
+    可以使用table标签进行展示,button发送数据,必须使用form method="post"方式提交数据
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'GET',
+            url: '/checkLoginStatus',
+            success: function(response) {
+                if (response.status !== 'logged_in') {
+                    window.location.href = '/login.html';
+                }
+            },
+            error: function() {
+                window.location.href = '/login.html';
+            }
+        });
+    });
+</script>
+
 </html>
