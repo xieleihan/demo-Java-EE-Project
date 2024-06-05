@@ -10,13 +10,15 @@
 
 1. 前端
 
-	`HTML`+`CSS`+`JavaScript`
+  `HTML`+`CSS`+`JavaScript`
 
-	![](https://camo.githubusercontent.com/12a158c4bba5f364dff7eb4131957b33cdc9ffbe975fc05462bad6e5a970ff94/68747470733a2f2f666173746c792e6a7364656c6976722e6e65742f67682f64657669636f6e732f64657669636f6e2f69636f6e732f68746d6c352f68746d6c352d6f726967696e616c2e737667#pic_left =50x50)
-
-	![](https://camo.githubusercontent.com/6f223daed0da2d689a18a8c63e08cb75a1a1f047d3d1dc113372f8bddfda1964/68747470733a2f2f666173746c792e6a7364656c6976722e6e65742f67682f64657669636f6e732f64657669636f6e2f69636f6e732f637373332f637373332d6f726967696e616c2e737667#pic_left =50x50)
-
-	![](https://camo.githubusercontent.com/68159dcdfc6381e366a25e26af58116c67a48c3dd5f3fea37c31590d7045957f/68747470733a2f2f666173746c792e6a7364656c6976722e6e65742f67682f64657669636f6e732f64657669636f6e2f69636f6e732f6a6176617363726970742f6a6176617363726970742d6f726967696e616c2e737667#pic_left =50x50)
+  <div align="center">
+    <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="45" alt="html5 logo"  />
+    <img width="6" />
+    <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="45" alt="css3 logo"  />
+    <img width="6" />
+    <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="45" alt="javascript logo"  />
+  </div>
 
 2. 后端
 
