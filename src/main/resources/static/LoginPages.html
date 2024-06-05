@@ -77,8 +77,11 @@
             url: '/login', // 后端登录接口的URL
             data: formData,
             success: function(response) {
+
                 // 登录成功则重定向回index.html,这一步可以在前端完成
                 window.location.href = '/index.html';
+                // JSON数据输出区域
+                // console.log('登录成功:', response);
                 // 更换顶部头像的图片地址
                 $('#topAvatar').attr('src', './images/new_avatar.png');
             },

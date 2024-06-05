@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.Set;
 
 @RestController
+@RequestMapping("/admin") // 添加一个类级别的请求映射
 public class AdminLoginController {
 
     @Autowired

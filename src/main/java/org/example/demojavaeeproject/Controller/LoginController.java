@@ -9,8 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 public class LoginController {
+
     @Autowired
     private UserService userService;
 
@@ -21,16 +24,13 @@ public class LoginController {
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestParam("username") String username,
                                                @RequestParam("password") String password) {
-        // 根据用户名从数据库中获取用户对象
         User user = userService.getUserByUsername(username);
 
         if (user != null && user.getPassword().equals(password)) {
-            // 如果用户存在且密码匹配，则登录成功
             StuInfo stuInfo = stuInfoService.getStuInfoByUsername(username);
             LoginResponse response = new LoginResponse("登录成功", stuInfo);
             return ResponseEntity.ok(response);
         } else {
-            // 否则，登录失败
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new LoginResponse("用户名或密码错误", null));
         }
     }
