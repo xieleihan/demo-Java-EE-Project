@@ -19,4 +19,34 @@ public class UserServiceImpl extends UserService {
     public User getUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
+
+    @Override
+    public boolean updateUserRole(String username, String role) {
+        User user = userRepository.findByUsername(username);
+        if (user != null) {
+            user.setRole(role);
+            userRepository.save(user);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean addUser(User user) {
+        if (userRepository.findByUsername(user.getUsername()) == null) {
+            userRepository.save(user);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteUser(String username) {
+        User user = userRepository.findByUsername(username);
+        if (user != null) {
+            userRepository.delete(user);
+            return true;
+        }
+        return false;
+    }
 }

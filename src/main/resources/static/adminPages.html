@@ -11,7 +11,7 @@
 <div class="main">
     <div class="loginPages">
         <h2>管理员登录页面</h2>
-        <form action="/admin/adminlogin" method="post" id="adminLoginForm">
+        <form action="/auth/adminlogin" method="post" id="adminLoginForm">
             <input type="text" name="adminname" placeholder="请输入adminname" class="adminUserInput" />
             <br />
             <input type="password" name="password" placeholder="请输入password" class="pswInput" />
@@ -21,7 +21,7 @@
     </div>
 </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/jquery-3.7.1.min.js"></script>
 <script>
     // 当表单提交时执行登录请求(Ajax)
     $('#adminLoginForm').submit(function(event) {
@@ -30,7 +30,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/admin/adminlogin', // 后端登录接口的URL
+            url: '/auth/adminlogin', // 后端登录接口的URL
             data: formData,
             success: function(response) {
                 // 登录成功则重定向回管理页面

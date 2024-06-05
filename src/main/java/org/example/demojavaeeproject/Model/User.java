@@ -75,4 +75,7 @@ public class User {
     public boolean hasRole(String role) {
         return roles != null && roles.contains(role);
     }
+
+    public void setRole(String newRole) {
+    }
 }

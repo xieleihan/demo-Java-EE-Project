@@ -4,28 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>管理页面</title>
+    <link rel="stylesheet" href="css/base.css">
+<!--    <link rel="stylesheet" href="css/adminPages.css">-->
 </head>
 <body>
-    <!-- 这里是当我在adminPages.html登录成功后跳转的页面 -->
-    <!-- 要做的事情就是,这个权限所有者,可以看到各种信息,进行相应的操作  引入level进行判断鉴权,防止非必要的访问,但是在前端处理这个是极度危险的,所以,只能前端传到后端,后端需要对cookie进行判断等,才能做出修改的指令执行 -->
-    可以使用table标签进行展示,button发送数据,必须使用form method="post"方式提交数据
+<div class="main">
+    <div class="heading">管理员页面</div>
+    <table id="dataTable" border="1">
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>角色</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 数据将通过JavaScript动态加载 -->
+        </tbody>
+    </table>
+    <form id="addForm" method="post">
+        <h3>添加用户</h3>
+        <label for="newUsername">用户名:</label>
+        <input type="text" id="newUsername" name="newUsername" required>
+        <label for="newPassword">密码:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+        <label for="newRole">角色:</label>
+        <input type="text" id="newRole" name="newRole" required>
+        <button type="submit">添加用户</button>
+    </form>
+    <form id="updateForm" method="post" style="display: none;">
+        <h3>更新用户角色</h3>
+        <input type="hidden" id="username" name="username">
+        <label for="role">角色:</label>
+        <input type="text" id="role" name="role">
+        <button type="submit">更新角色</button>
+    </form>
+</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="./js/jquery-3.7.1.min.js"></script>
 <script>
     $(document).ready(function() {
         $.ajax({
             type: 'GET',
-            url: '/checkLoginStatus',
+            url: '/auth/checkLoginStatus',
             success: function(response) {
-                if (response.status !== 'logged_in') {
-                    window.location.href = '/login.html';
+                if (response.status === 'logged_in') {
+                    loadUserData();
+                } else {
+                    window.location.href = '/adminPages.html';
                 }
             },
             error: function() {
-                window.location.href = '/login.html';
+                window.location.href = '/adminPages.html';
             }
+        });
+
+        function loadUserData() {
+            $.ajax({
+                type: 'GET',
+                url: '/admin/getAllUsers',
+                success: function(users) {
+                    var tableBody = $('#dataTable tbody');
+                    tableBody.empty();
+                    users.forEach(function(user) {
+                        var row = '<tr>' +
+                            '<td>' + user.username + '</td>' +
+                            '<td>' + user.role + '</td>' +
+                            '<td>' +
+                            '<button class="editButton" data-username="' + user.username + '" data-role="' + user.role + '">编辑</button>' +
+                            '<button class="deleteButton" data-username="' + user.username + '">删除</button>' +
+                            '</td>' +
+                            '</tr>';
+                        tableBody.append(row);
+                    });
+
+                    $('.editButton').click(function() {
+                        var username = $(this).data('username');
+                        var role = $(this).data('role');
+                        $('#username').val(username);
+                        $('#role').val(role);
+                        $('#updateForm').show();
+                    });
+
+                    $('.deleteButton').click(function() {
+                        var username = $(this).data('username');
+                        if (confirm('确定要删除用户 ' + username + ' 吗？')) {
+                            $.ajax({
+                                type: 'DELETE',
+                                url: '/admin/deleteUser?username=' + username,
+                                success: function(response) {
+                                    alert('用户删除成功');
+                                    loadUserData();
+                                },
+                                error: function(xhr) {
+                                    alert('删除失败: ' + xhr.responseText);
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        }
+
+        $('#updateForm').submit(function(event) {
+            event.preventDefault();
+            var formData = {
+                username: $('#username').val(),
+                role: $('#role').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/admin/updateUserRole',
+                data: JSON.stringify(formData),
+                contentType: 'application/json',
+                success: function(response) {
+                    alert('角色更新成功');
+                    loadUserData();
+                    $('#updateForm').hide();
+                },
+                error: function(xhr) {
+                    alert('更新失败: ' + xhr.responseText);
+                }
+            });
+        });
+
+        $('#addForm').submit(function(event) {
+            event.preventDefault();
+            var formData = {
+                username: $('#newUsername').val(),
+                password: $('#newPassword').val(),
+                role: $('#newRole').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/admin/addUser',
+                data: JSON.stringify(formData),
+                contentType: 'application/json',
+                success: function(response) {
+                    alert('用户添加成功');
+                    loadUserData();
+                    $('#addForm')[0].reset();
+                },
+                error: function(xhr) {
+                    alert('添加失败: ' + xhr.responseText);
+                }
+            });
         });
     });
 </script>
-
 </html>
+

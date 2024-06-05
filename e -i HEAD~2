@@ -1,0 +1,62 @@
+[33mcommit b8e94cbbea8c3baa57a22e3ce6e801de2a5e5263[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: 南秋SouthAki <xieleihan@gmail.com>
+Date:   Wed Jun 5 22:11:05 2024 +0800
+
+    fix:some question
+
+[33mcommit cb65bc903590cd433af237dbfc96580ef1783b7e[m
+Author: 南秋SouthAki <xieleihan@gmail.com>
+Date:   Wed Jun 5 21:41:42 2024 +0800
+
+    feat&fix:新增了管理员登录功能和修复了一些臭虫
+
+[33mcommit 19d2e65af254001286536cab3f79f12f583fd527[m
+Author: 南秋SouthAki <xieleihan@gmail.com>
+Date:   Wed Jun 5 14:32:40 2024 +0800
+
+    fix:修复了一些登录出现400,405,415的问题
+
+[33mcommit 4356bf861f7fcedc6f3081e514045213428422b1[m
+Merge: 11bce27 5f00df8
+Author: 南秋SouthAki <57227318+xieleihan@users.noreply.github.com>
+Date:   Mon Jun 3 21:47:17 2024 +0800
+
+    Merge pull request #1 from tingxianzi1/main
+    
+    updata
+
+[33mcommit 5f00df811d29524ee6928daa0782f16eae5819bb[m
+Author: tingxianzi1 <798971961@qq.com>
+Date:   Mon Jun 3 21:35:21 2024 +0800
+
+    updata
+
+[33mcommit 11bce27ac767544cddde390406b4fa42aade5d50[m
+Author: 南秋SouthAki <xieleihan@gmail.com>
+Date:   Mon Jun 3 21:22:51 2024 +0800
+
+    fix some content
+
+[33mcommit b1b91e2a781623cfe9506ab13582112b22727b56[m
+Author: 南秋SouthAki <xieleihan@gmail.com>
+Date:   Sun Jun 2 20:14:09 2024 +0800
+
+    Updata some content
+
+[33mcommit 56531d2c94fb2482014dd9cddeff17196428ddb9[m
+Author: 南秋SouthAki <xieleihan@gmail.com>
+Date:   Mon May 13 07:52:15 2024 +0800
+
+    Add new registration
+
+[33mcommit 6b624b0599066389a35ca41848c8958e92a970e7[m
+Author: 南秋SouthAki <xieleihan@gmail.com>
+Date:   Mon May 13 00:20:24 2024 +0800
+
+    Add new registration
+
+[33mcommit 83f9fcca3c0430b40d41dd61d76d5314e08b90f9[m
+Author: 南秋SouthAki <xieleihan@gmail.com>
+Date:   Sun May 12 03:00:14 2024 +0800
+
+    commit message
