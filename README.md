@@ -12,7 +12,7 @@
 
   `HTML`+`CSS`+`JavaScript`
 
-  <div align="center">
+  <div align="left">
     <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="45" alt="html5 logo"  />
     <img width="6" />
     <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="45" alt="css3 logo"  />
@@ -22,11 +22,19 @@
 
 2. 后端
 
-	`Springboot`+`Mybatis`
+  `Springboot`+`Mybatis`
+
+  <div align="left">
+    <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="45" alt="Spring logo"  />
+  </div>
 
 3. 数据持久化
 
 	`MySQL`
+	
+	<div align="left">
+	  <img src="https://fastly.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="45" alt="MySQL logo"  />
+	</div>
 
 
 
