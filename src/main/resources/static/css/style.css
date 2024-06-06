@@ -95,5 +95,22 @@
     transform: translate(-50%,-50%);
     background-color: white;
     border-radius: 20px;
+    display: flex; /* 使用Flexbox来居中内部元素 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    padding: 20px; /* 添加一些内边距以便更好地看到表格 */
+    box-sizing: border-box; /* 确保padding不影响元素的最终大小 */
+}
+
+.main .rightMain .centered-table {
+    width: 100%; /* 或者你可以指定一个具体的宽度 */
+    max-width: 100%; /* 限制表格的最大宽度为容器宽度 */
+    border-collapse: collapse; /* 合并相邻的边框 */
+}
+
+.main .rightMain .centered-table th,.main .rightMain .centered-table td {
+    border: 1px solid black; /* 添加边框 */
+    padding: 40px; /* 添加内边距 */
+    text-align: left; /* 文本左对齐 */
 }
 /* end */
