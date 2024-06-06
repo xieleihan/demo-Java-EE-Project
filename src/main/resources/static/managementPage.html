@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>管理页面</title>
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/managementPages.css">
 <!--    <link rel="stylesheet" href="css/adminPages.css">-->
 </head>
 <body>
 <div class="main">
+    <div class="loginPages">
     <div class="heading">管理员页面</div>
-    <table id="dataTable" border="1">
+    <table class="table" id="dataTable" border="1">
         <thead>
         <tr>
             <th>用户名</th>
@@ -23,13 +25,12 @@
         </tbody>
     </table>
     <form id="addForm" method="post">
-        <h3>添加用户</h3>
-        <label for="newUsername">用户名:</label>
-        <input type="text" id="newUsername" name="newUsername" required>
-        <label for="newPassword">密码:</label>
-        <input type="password" id="newPassword" name="newPassword" required>
-        <label for="newRole">角色:</label>
-        <input type="text" id="newRole" name="newRole" required>
+        <input type="text" id="newUsername" name="newUsername" placeholder="请输入用户名" required>
+        <br>
+        <input type="password" id="newPassword" name="newPassword" placeholder="请输入密码" required>
+        <br>
+        <input type="text" id="newRole" name="newRole" placeholder="请输入角色" required>
+        <br>
         <button type="submit">添加用户</button>
     </form>
     <form id="updateForm" method="post" style="display: none;">
@@ -39,6 +40,7 @@
         <input type="text" id="role" name="role">
         <button type="submit">更新角色</button>
     </form>
+    </div>
 </div>
 </body>
 
