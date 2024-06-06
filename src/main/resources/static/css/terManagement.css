@@ -1,0 +1,101 @@
+.main{
+    width: 100%;
+    min-width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    background: url('/images/article-bg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+}
+.main_css{
+    width: 510px;
+    height: 280px;
+    padding: 1em;
+    /* margin: 0 auto; */
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    background-color: white;
+    backdrop-filter: blur(5px);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.main h1{
+    width: 510px;
+    height: 50px;
+    position: relative;
+    top: -40px;
+    left: 170px;
+}
+
+
+.main .addStuInfoForm_css{
+    width: 250px;
+    position: relative;
+    top: -50px;
+    left: 0;
+}
+
+
+.main .updateStuInfoForm_css{
+    width: 250px;
+    position: relative;
+    top: -180px;
+    left: 250px;
+}
+.stuInfoTable_css{
+    position: relative;
+    top: -150px;
+    left: 0;
+}
+.title_css {
+   font-size: 20px;
+    position: relative;
+    top: 0;
+    left: 30px;
+}
+#title_css{
+    font-size: 20px;
+    position: relative;
+    top: 0;
+    left: 30px;
+}
+.main input{
+    padding: 13px;
+    width: 7em;
+    height: 5px;
+    border-radius: 1em;
+    margin-bottom: 5px;
+}
+.addStuInfoForm_css #addStuInfoForm{
+    position: relative;
+    top: 10px;
+    left: 30px;
+}
+.main button{
+    background-color: lightblue;
+    padding: 13px;
+    height: 5px;
+    line-height: 5px;
+    border-radius: 1em;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 32px;
+}
+
+.updateStuInfoForm_css #updateStuInfoForm {
+    position: relative;
+    top: 10px;
+    left: 30px;
+}
