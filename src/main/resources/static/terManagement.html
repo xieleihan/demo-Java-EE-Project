@@ -5,15 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>老师管理页面</title>
     <link rel="stylesheet" href="css/terManagement.css">
+    <script src="./js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <div class="main">
-        <form action="" method="post">
-            
-        </form>
-    </div>
-</body>
+<h1>学生信息管理</h1>
+<table id="stuInfoTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>姓名</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- 学生信息将会动态加载到这里 -->
+    </tbody>
+</table>
+
+<h2>添加学生信息</h2>
+<form id="addStuInfoForm">
+    <label for="addUsername">用户名:</label>
+    <input type="text" id="addUsername" name="username" required>
+    <label for="addName">姓名:</label>
+    <input type="text" id="addName" name="name" required>
+    <button type="submit">添加</button>
+</form>
+
+<h2>更新学生信息</h2>
+<form id="updateStuInfoForm">
+    <label for="updateId">ID:</label>
+    <input type="text" id="updateId" name="id" required>
+    <label for="updateUsername">用户名:</label>
+    <input type="text" id="updateUsername" name="username" required>
+    <label for="updateName">姓名:</label>
+    <input type="text" id="updateName" name="name" required>
+    <button type="submit">更新</button>
+</form>
+
 <script>
-    // 使用Ajax修改数据
+    $(document).ready(function() {
+        // 获取所有学生信息
+        function loadStuInfos() {
+            $.ajax({
+                type: 'GET',
+                url: '/teacher/getAllStuInfos',
+                success: function(stuInfos) {
+                    const tbody = $('#stuInfoTable tbody');
+                    tbody.empty();
+                    stuInfos.forEach(info => {
+                        tbody.append(`
+                                <tr>
+                                    <td>${info.id}</td>
+                                    <td>${info.username}</td>
+                                    <td>${info.name}</td>
+                                    <td><button class="editButton" data-id="${info.id}" data-username="${info.username}" data-name="${info.name}">编辑</button></td>
+                                </tr>
+                            `);
+                    });
+                },
+                error: function() {
+                    alert('获取学生信息失败');
+                }
+            });
+        }
+
+        // 加载学生信息
+        loadStuInfos();
+
+        // 添加学生信息
+        $('#addStuInfoForm').submit(function(event) {
+            event.preventDefault();
+            const stuInfo = {
+                username: $('#addUsername').val(),
+                name: $('#addName').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/teacher/addStuInfo',
+                contentType: 'application/json',
+                data: JSON.stringify(stuInfo),
+                success: function(response) {
+                    alert(response);
+                    loadStuInfos();
+                },
+                error: function() {
+                    alert('添加学生信息失败');
+                }
+            });
+        });
+
+        // 更新学生信息
+        $('#updateStuInfoForm').submit(function(event) {
+            event.preventDefault();
+            const stuInfo = {
+                id: $('#updateId').val(),
+                username: $('#updateUsername').val(),
+                name: $('#updateName').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/teacher/updateStuInfo',
+                contentType: 'application/json',
+                data: JSON.stringify(stuInfo),
+                success: function(response) {
+                    alert(response);
+                    loadStuInfos();
+                },
+                error: function() {
+                    alert('更新学生信息失败');
+                }
+            });
+        });
+
+        // 编辑按钮点击事件
+        $(document).on('click', '.editButton', function() {
+            const id = $(this).data('id');
+            const username = $(this).data('username');
+            const name = $(this).data('name');
+
+            $('#updateId').val(id);
+            $('#updateUsername').val(username);
+            $('#updateName').val(name);
+        });
+    });
 </script>
+</body>
 </html>

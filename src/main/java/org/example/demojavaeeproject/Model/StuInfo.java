@@ -75,6 +75,10 @@ public class StuInfo {
     public void setStudentClass(String studentClass) {
         this.studentClass = studentClass;
     }
+
+    public Long getId() {
+        return null;
+    }
 }
 
 
