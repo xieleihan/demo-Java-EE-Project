@@ -1,0 +1,70 @@
+.main{
+    width: 100%;
+    min-width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    background: url('/images/article-bg-day.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.main .loginPages{
+    width: 500px;
+    height: 400px;
+    padding: 1em;
+    /* margin: 0 auto; */
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    background-color: white;
+    backdrop-filter: blur(5px);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.main .heading {
+    width: 200px;
+    height: 40px;
+    font-size: 24px;
+    position: relative;
+    top: 0;
+    left: 170px;
+}
+
+.main .table{
+    width: 200px;
+    height: 16px;
+    font-size: 12px;
+    position: relative;
+    top: 0;
+    left: 140px;
+}
+
+.main #addForm input{
+    padding: 1em;
+    width: 20em;
+    border-radius: 1em;
+    margin-bottom: 1em;
+    position: relative;
+    left: 100px;
+}
+
+.main #addForm button{
+    background-color: lightblue;
+    padding: 1em;
+    border-radius: 1em;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    width: 10em;
+    left: 180px;
+}
+
