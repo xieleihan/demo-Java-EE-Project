@@ -8,41 +8,46 @@
     <script src="./js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+<div class="main">
+    <div class="main_css">
 <h1>学生信息管理</h1>
-<table id="stuInfoTable">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>用户名</th>
-        <th>姓名</th>
-        <th>操作</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!-- 学生信息将会动态加载到这里 -->
-    </tbody>
-</table>
 
-<h2>添加学生信息</h2>
-<form id="addStuInfoForm">
-    <label for="addUsername">用户名:</label>
-    <input type="text" id="addUsername" name="username" required>
-    <label for="addName">姓名:</label>
-    <input type="text" id="addName" name="name" required>
-    <button type="submit">添加</button>
-</form>
+    <div class="addStuInfoForm_css">
+        <span class="title_css">添加学生信息</span>
+        <form id="addStuInfoForm">
+                <input type="text" id="addUsername" name="username" placeholder="请输入用户名" required>
+                <input type="text" id="addName" name="name" placeholder="请输入名字" required>
+                <br>
+                <button type="submit">添加</button>
+        </form>
+    </div>
 
-<h2>更新学生信息</h2>
-<form id="updateStuInfoForm">
-    <label for="updateId">ID:</label>
-    <input type="text" id="updateId" name="id" required>
-    <label for="updateUsername">用户名:</label>
-    <input type="text" id="updateUsername" name="username" required>
-    <label for="updateName">姓名:</label>
-    <input type="text" id="updateName" name="name" required>
-    <button type="submit">更新</button>
-</form>
+    <div class="updateStuInfoForm_css">
+        <span id="title_css">更新学生信息</span>
+        <form id="updateStuInfoForm">
+          <input type="text" id="updateId" name="id" placeholder="请输入ID" required>
+          <input type="text" id="updateUsername" name="username" placeholder="请输入用户名" required>
+          <input type="text" id="updateName" name="name" placeholder="请输入名字" required>
+          <br>
+          <button type="submit">更新</button>
+        </form>
+    </div>
 
+    <table id="stuInfoTable" class="stuInfoTable_css">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>姓名</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 学生信息将会动态加载到这里 -->
+        </tbody>
+    </table>
+</div>
+</div>
 <script>
     $(document).ready(function() {
         // 获取所有学生信息
