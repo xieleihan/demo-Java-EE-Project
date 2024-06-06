@@ -108,5 +108,5 @@ git clone git@github.com:xieleihan/demo-Java-EE-Project.git
 
 但是该项目依旧开源有效,任何拿去学习魔改等都没有任何问题,无需许可,感谢每一个对该项目支持的开发者,虽然这个是一个很不起眼的项目,也没有什么创新的点,但是学习就是这样
 
-小组成员:4人(**前后端框架,前端,后端1人**[@xieleihan],*前端2人*[@[**tingxianzi1**](https://github.com/tingxianzi1)],*word文档1人*),历时2day🔭
+小组成员:4人(**前后端框架,前端,后端1人**[@xieleihan],*前端2人*[@[**tingxianzi1**](https://github.com/tingxianzi1)],@[**Qqqqqzr**](https://github.com/tingxianzi1)*word文档1人*),历时2day🔭
 
