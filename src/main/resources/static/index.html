@@ -21,9 +21,9 @@
             <!-- 下半部分选单 -->
             <div class="leftMain-bottom">
                 <ul>
-                    <li>基本信息</li>
-                    <li>课程管理</li>
-                    <li>关于</li>
+                    <li id="switch-button-1">基本信息</li>
+                    <li id="switch-button-2">课程管理</li>
+                    <li id="switch-button-3">关于</li>
                 </ul>
             </div>
 
@@ -42,6 +42,79 @@
             <!-- 右侧展示 -->
             <div class="rightMain-display">
                 <div class="rightMain-display-info">
+                    <div id="json-data"></div>
+                    <table class="centered-table" id="table1">
+                        <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>学号</th>
+                            <th>年级</th>
+                            <th>班级</th>
+                        </tr>
+                        </thead>
+                        <tbody id="studentInfoTableBody">
+                            <tr>
+                                <td>tingxianzi</td>
+                                <td>1002</td>
+                                <td>大二</td>
+                                <td>2班</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="centered-table" id="table2" style="display: none;">
+                        <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>年龄</th>
+                            <th>职业</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>大大</td>
+                            <td>30</td>
+                            <td>工程师</td>
+                        </tr>
+                        <tr>
+                            <td>伟大的哇</td>
+                            <td>25</td>
+                            <td>设计师</td>
+                        </tr>
+                        <tr>
+                            <td>达瓦达瓦</td>
+                            <td>28</td>
+                            <td>医生</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="centered-table" id="table3" style="display: none;">
+                        <thead>
+                        <tr>
+                            <th>组员姓名</th>
+                            <th>学号</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>谢垒涵</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>吕芷添</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>彭成骏</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>丘梓睿</td>
+                            <td>32</td>
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
