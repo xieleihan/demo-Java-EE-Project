@@ -112,3 +112,4 @@ git clone git@github.com:xieleihan/demo-Java-EE-Project.git
 
 小组成员:4人(**前后端框架,前端,后端1人**[@xieleihan],*前端2人*[@[**tingxianzi1**](https://github.com/tingxianzi1)],[@[**Qqqqqzr**](https://github.com/Qqqqqzr)],*word文档1人*[@[**pppccj**](https://github.com/pppccj)]),历时2day🔭
 
+#### 项目终结 : 2024-06-09 山水有相逢,来日皆可期

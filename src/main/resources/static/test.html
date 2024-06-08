@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .intro {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>欢迎来到我的个人网页</h1>
+        </header>
+        <div class="intro">
+            <p>你好！我是[你的名字]，这是我的个人简介网页。我有丰富的项目经历和多种技能，希望能通过这个网页向大家展示。感谢你的来访！</p>
+        </div>
+        <div class="carousel">
+            <img src="https://via.placeholder.com/900x300/ff7f7f/333333?text=图片1" class="active" alt="图片1">
+            <img src="https://via.placeholder.com/900x300/7fbfff/333333?text=图片2" alt="图片2">
+            <img src="https://via.placeholder.com/900x300/7fff7f/333333?text=图片3" alt="图片3">
+            <div class="controls">
+                <button id="prev">&lt;</button>
+                <button id="next">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+
+        document.getElementById('next').addEventListener('click', () => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            images[currentIndex].classList.add('active');
+        });
+    </script>
+</body>
+
+</html>
